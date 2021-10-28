@@ -1,0 +1,120 @@
+<script>
+  let listaAutos = []; 
+    
+    const auto = {  
+        matricula:'',
+        marca:'', 
+    }
+    
+      let autos = 0; 
+      let totalAutos = 0;
+    
+      inicio();        
+    
+      function inicio() { 
+        opciones = parseInt( 
+          prompt(
+            "INGRESA LA OPCION QUE QUIERES REALIZAR:" + 
+              "\n" +
+              "\n" +
+              "ENTRADA" +
+              "\n"+
+              "1. Registro" +
+              "\n" +
+              "\n" +
+              "SALIDA" +
+              "\n" +
+              "2. Pagar" +
+              "\n" +
+              "\n" +
+              "OTRAS ACCIONES" +
+              "\n" +
+              "3. Mostrar autos en el estacionamiento" +
+              "\n" +
+              "4. Mostrar auto buscando su placa" +
+              "\n" +
+              "5. Mostrar auto por marca" +
+              "\n" +
+              "6. Salir del programa"
+          )
+        );
+    
+        switch (opciones) { 
+          case 1:
+            registro();
+            break;
+          case 2:
+            pagar();
+            break;
+          case 3:
+            calcularAutos();
+            break;
+          case 4:
+            especificoPlacas();
+          break;
+          case 5:
+            especificoMarca();
+          break;  
+          case 6:
+          break;
+          default:
+            alert("No existe esa opcion");
+          break;
+        }
+      }
+    
+      function registro(){ 
+        let nAutos = prompt("¿Cuantos autos va registrar?"); 
+        for (let i= 1; i <= nAutos; i++) 
+        
+        { 
+          
+          let ingresaMatricula = prompt("Ingresa la matricula del auto: "); 
+          let ingresaMarca = prompt ("Ingresa la marca del auto: ");
+          let estacionamiento = alert("Su estacionamiento es el " + [i] + ingresaMarca); 
+          console.log(estacionamiento + [i]);
+          listaAutos.push(" Matricula: "+ingresaMatricula+" Marca: "+ ingresaMarca); 
+          console.log(listaAutos);
+          inicio();
+ 
+        }
+        
+      }
+      
+      function pagar (){
+          let tiempo = prompt ("¿Cuanto tiempo se tardo? Ingresa la cantidad a pagar \n 1 A 3 hrs = $100 \n 4 a 5 hrs = $200 \n 6 o mas hrs = $500");
+        
+        switch (tiempo){
+            case tiempo = "100":
+            deposito = parseInt(prompt("Cantidad a depositar"));
+            cambio = parseInt(deposito) - parseInt(tiempo);
+            console.log("Tu cambio es: " + cambio);
+            break;
+            case tiempo = "200":
+            deposito = parseInt(prompt("Cantidad a depositar"));
+            cambio = parseInt(deposito) - parseInt(tiempo);
+            console.log("Tu cambio es: " + cambio);
+            break;
+            case tiempo = "500":
+            deposito = parseInt(prompt("Cantidad a depositar"));
+            cambio = parseInt(deposito) - parseInt(tiempo);
+            console.log("Tu cambio es: " + cambio);
+            break;
+          }  
+    }
+      
+      function calcularAutos(){
+        console.log("La cantidad de autos es: " + listaAutos.length);
+      }
+
+        function especificoPlacas() { 
+        let numeroPlacas = parseInt(prompt("Ingresa el numero de placas")); 
+        console.log(matricula[listaAutos]); 
+        inicio(); 
+        } 
+      function especificoMarca(){
+        let Marca = prompt("Ingresa la marca de su auto");
+        console.log(marca[listaAutos])
+        inicio();
+      }
+</script>
